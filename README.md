@@ -55,6 +55,7 @@ public class PointSET {
    public static void main(String[] args)                  // unit testing of the methods (optional) 
 }
    
+   
 Implementation requirements.  You must use either SET or java.util.TreeSet; do not implement your own red–black BST.
 
 Corner cases.  Throw an IllegalArgumentException if any argument is null. Performance requirements.  Your implementation should support insert() and contains() in time proportional to the logarithm of the number of points in the set in the worst case; it should support nearest() and range() in time proportional to the number of points in the set.
@@ -62,26 +63,7 @@ Corner cases.  Throw an IllegalArgumentException if any argument is null. Perfor
 2d-tree implementation. Write a mutable data type KdTree.java that uses a 2d-tree to implement the same API (but replace PointSET with KdTree). A 2d-tree is a generalization of a BST to two-dimensional keys. The idea is to build a BST with points in the nodes, using the x- and y-coordinates of the points as keys in strictly alternating sequence.
 
 Search and insert. The algorithms for search and insert are similar to those for BSTs, but at the root we use the x-coordinate (if the point to be inserted has a smaller x-coordinate than the point at the root, go left; otherwise go right); then at the next level, we use the y-coordinate (if the point to be inserted has a smaller y-coordinate than the point in the node, go left; otherwise go right); then at the next level the x-coordinate, and so forth.
-  Insert (0.7, 0.2)  
-
-insert (0.7, 0.2)
-  Insert (0.5, 0.4)  
-
-insert (0.5, 0.4)
-  Insert (0.2, 0.3)  
-
-insert (0.2, 0.3)
-  Insert (0.4, 0.7)  
-
-insert (0.4, 0.7)
-  Insert (0.9, 0.6)  
-
-insert (0.9, 0.6)
-Insert (0.7, 0.2)
-Insert (0.5, 0.4)
-Insert (0.2, 0.3)
-Insert (0.4, 0.7)
-Insert (0.9, 0.6)
+   
 Draw. A 2d-tree divides the unit square in a simple way: all the points to the left of the root go in the left subtree; all those to the right go in the right subtree; and so forth, recursively. Your draw() method should draw all of the points to standard draw in black and the subdivisions in red (for vertical splits) and blue (for horizontal splits). This method need not be efficient—it is primarily for debugging.
 The prime advantage of a 2d-tree over a BST is that it supports efficient implementation of range search and nearest-neighbor search. Each node corresponds to an axis-aligned rectangle in the unit square, which encloses all of the points in its subtree. The root corresponds to the unit square; the left and right children of the root corresponds to the two rectangles split by the x-coordinate of the point at the root; and so forth.
 
