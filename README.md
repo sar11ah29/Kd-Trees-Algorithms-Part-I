@@ -1,12 +1,12 @@
 # Kd-Trees-Algorithms-Part-I
 Kd-Trees Algorithms, Part I
 Write a data type to represent a set of points in the unit square (all points have x- and y-coordinates between 0 and 1) using a 2d-tree to support efficient range search (find all of the points contained in a query rectangle) and nearest-neighbor search (find a closest point to a query point). 2d-trees have numerous applications, ranging from classifying astronomical objects to computer animation to speeding up neural networks to mining data to image retrieval.
-Range search and k-nearest neighbor
+
 
 Geometric primitives. To get started, use the following geometric primitives for points and axis-aligned rectangles in the plane.
 
-Geometric primitives
 The immutable data type Point2D (part of algs4.jar) represents points in the plane. Here is the subset of its API that you may use:
+
 public class Point2D implements Comparable<Point2D> {
    public Point2D(double x, double y)              // construct the point (x, y)
    public  double x()                              // x-coordinate 
@@ -18,6 +18,7 @@ public class Point2D implements Comparable<Point2D> {
    public    void draw()                           // draw to standard draw 
    public  String toString()                       // string representation 
 }
+
 The immutable data type RectHV (part of algs4.jar) represents axis-aligned rectangles. Here is the subset of its API that you may use:
 public class RectHV {
    public    RectHV(double xmin, double ymin,      // construct the rectangle [xmin, xmax] x [ymin, ymax] 
