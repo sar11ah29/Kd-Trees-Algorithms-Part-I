@@ -20,6 +20,7 @@ public class Point2D implements Comparable<Point2D> {
 }
 
 The immutable data type RectHV (part of algs4.jar) represents axis-aligned rectangles. Here is the subset of its API that you may use:
+   
 public class RectHV {
    public    RectHV(double xmin, double ymin,      // construct the rectangle [xmin, xmax] x [ymin, ymax] 
                     double xmax, double ymax)      // throw an IllegalArgumentException if (xmin > xmax) or (ymin > ymax)
@@ -35,7 +36,10 @@ public class RectHV {
    public    void draw()                           // draw to standard draw 
    public  String toString()                       // string representation 
 }
+   
+   
 Do not modify these data types.
+   
 Brute-force implementation. Write a mutable data type PointSET.java that represents a set of points in the unit square. Implement the following API by using a red–black BST:
 
 public class PointSET {
@@ -50,6 +54,7 @@ public class PointSET {
 
    public static void main(String[] args)                  // unit testing of the methods (optional) 
 }
+   
 Implementation requirements.  You must use either SET or java.util.TreeSet; do not implement your own red–black BST.
 
 Corner cases.  Throw an IllegalArgumentException if any argument is null. Performance requirements.  Your implementation should support insert() and contains() in time proportional to the logarithm of the number of points in the set in the worst case; it should support nearest() and range() in time proportional to the number of points in the set.
